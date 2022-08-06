@@ -5,13 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.faryz.recipeapp.databinding.FragmentFirstBinding
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class FirstFragment : Fragment() {
+class FirstFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     private var _binding: FragmentFirstBinding? = null
 
@@ -25,6 +28,17 @@ class FirstFragment : Fragment() {
     ): View? {
 
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
+
+        // populate spinner with th recipe type
+        ArrayAdapter.createFromResource(
+            requireContext(),
+            R.array.type_of_recipe,
+            android.R.layout.simple_spinner_item
+        ). also { arrayAdapter ->
+            arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            binding.recipeTypeSpinner.adapter = arrayAdapter
+        }
+        binding.recipeTypeSpinner.onItemSelectedListener = this
         return binding.root
 
     }
@@ -40,5 +54,14 @@ class FirstFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+        val itemSelected = parent?.getItemAtPosition(position)
+        Toast.makeText(context, "Selected: $itemSelected", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onNothingSelected(parent: AdapterView<*>?) {
+        Toast.makeText(context, "Nothing selected", Toast.LENGTH_SHORT).show()
     }
 }
