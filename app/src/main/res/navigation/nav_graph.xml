@@ -14,15 +14,27 @@
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_InfoFragment"
+            app:destination="@id/InfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.faryz.recipeapp.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        android:name="com.faryz.recipeapp.AddRecipeFragment"
+        android:label="@string/add_recipe_fragment_label"
+        tools:layout="@layout/fragment_add_recipe">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+        <argument
+            android:name="recipeName"
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
+    <fragment
+        android:id="@+id/InfoFragment"
+        android:name="com.faryz.recipeapp.InfoFragment"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info" />
 </navigation>

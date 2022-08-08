@@ -3,7 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/androidProject/RecipeApp/app/src/main/res/layout/fragment_first.xml" value="0.5052083333333334" />
+        <entry key="..\:/androidProject/RecipeApp/app/src/main/res/layout/activity_main.xml" value="0.5052083333333334" />
+        <entry key="..\:/androidProject/RecipeApp/app/src/main/res/layout/fragment_add_recipe.xml" value="0.5" />
+        <entry key="..\:/androidProject/RecipeApp/app/src/main/res/layout/fragment_first.xml" value="0.33" />
+        <entry key="..\:/androidProject/RecipeApp/app/src/main/res/layout/fragment_info.xml" value="0.5" />
+        <entry key="..\:/androidProject/RecipeApp/app/src/main/res/layout/fragment_second.xml" value="0.5052083333333334" />
+        <entry key="..\:/androidProject/RecipeApp/app/src/main/res/layout/list_item.xml" value="0.5041666666666667" />
+        <entry key="..\:/androidProject/RecipeApp/app/src/main/res/layout/recipe_list_row.xml" value="0.5" />
+        <entry key="..\:/androidProject/RecipeApp/app/src/main/res/layout/recipe_list_row_v2.xml" value="0.5" />
       </map>
     </option>
   </component>
